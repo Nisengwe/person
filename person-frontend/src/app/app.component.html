@@ -1,0 +1,25 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/person">
+        <mat-icon>person_add</mat-icon>
+        <span>New Person</span>
+      </a>
+      <a mat-list-item  routerLink="/persons">
+        <mat-icon>add</mat-icon>
+        <span>List Persons</span>
+      </a>
+      <a mat-list-item   (click)="sidenav.close()">
+        <mat-icon>close</mat-icon>
+        <span>Close</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+ 
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.open()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

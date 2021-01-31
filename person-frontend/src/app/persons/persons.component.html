@@ -1,0 +1,26 @@
+    <h2>Person List</h2>
+    
+    <mat-table [dataSource]="dataSource" mat-elevation-z8>
+        <ng-container matColumnDef="firstName">
+            <mat-header-cell mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+            <mat-cell *matCellDef="let person"> {{person.firstName}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="lastName">
+            <mat-header-cell mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+            <mat-cell *matCellDef="let person"> {{person.lastName}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <mat-header-cell mat-header-cell *matHeaderCellDef> actions </mat-header-cell>
+            <mat-cell *matCellDef="let person">
+                <button mat-raised-button color="primary" (click)="showRecord(person)">
+                    <mat-icon>preview</mat-icon></button>
+            </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+        <mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  
+    <br/>
+    <button  (click)="addRecord()" mat-raised-button color="primary">Add New</button>

@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Edit Address</h2>
+<mat-dialog-content class="form-container" [formGroup]="form">
+    <mat-form-field>
+        <input matInput placeholder="Street" formControlName="street" />
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="City" formControlName="city" />
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="State" formControlName="state" />
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Postalcode" formControlName="postalcode" />
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+</mat-dialog-actions>
