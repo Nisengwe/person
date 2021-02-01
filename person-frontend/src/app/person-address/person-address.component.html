@@ -1,6 +1,6 @@
 <div class="container-main">
     <div class="container">
-        <mat-card *ngFor="let address of addresses" class="address mat-elevation-z8">
+        <mat-card *ngFor="let address of person.address" class="address mat-elevation-z8">
             <mat-card-content>
                 <div class="address-line">
                     <span>{{address.street}}</span>
@@ -11,12 +11,10 @@
             </mat-card-content>
             <mat-card-actions align="end">
                 <button (click)="editAddress(address)" mat-raised-button color="primary">Edit</button>
-                <button mat-raised-button color="accent">Delete</button>
+                <button (click)="deleteAddress(address)" mat-raised-button color="accent">Delete</button>
             </mat-card-actions>
         </mat-card>
     </div>
     <br>
-    <mat-divider></mat-divider>
-    <br>
-    <button class="center" mat-raised-button color="primary">Add Address</button>
+    <button (click)="addAddress()" class="center" mat-raised-button color="primary">Add Address</button>
 </div>

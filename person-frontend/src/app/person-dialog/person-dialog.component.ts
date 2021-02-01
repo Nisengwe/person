@@ -20,12 +20,17 @@ export class PersonDialogComponent implements OnInit {
   ) {
     this.person = data
     this.form = fb.group({
+      id: [this.person.id],
       firstName: [this.person.firstName, Validators.required],
       lastName: [this.person.lastName, Validators.required]
     })
   }
 
   ngOnInit(): void {
+  }
+
+  submit(){
+    this.dialogRef.close(this.form.value)
   }
 
 }

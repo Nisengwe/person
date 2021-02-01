@@ -19,6 +19,7 @@ export class AddressDialogComponent implements OnInit {
   ) {
     this.address = data
     this.form = fb.group({
+      id: [this.address.id],
       street: [this.address.street, Validators.required],
       city: [this.address.city, Validators.required],
       state: [this.address.state, Validators.required],
@@ -27,6 +28,10 @@ export class AddressDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  submit() {
+    this.dialogRef.close(this.form.value)
   }
 
 }

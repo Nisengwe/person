@@ -1,10 +1,10 @@
 <div class="container">
  <mat-tab-group>
-   <mat-tab label="Name">
+   <mat-tab label="Person">
      <app-person-card [person]="person"></app-person-card>
    </mat-tab>
    <mat-tab label="Address">
-   <app-person-address *ngIf="!!person.address" [addresses]="person.address"></app-person-address>
+   <app-person-address   [person]="person"></app-person-address>
   </mat-tab>
  </mat-tab-group>
 </div>

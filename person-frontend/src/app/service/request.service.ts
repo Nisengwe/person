@@ -26,14 +26,15 @@ export class RequestService {
     );
   }
 
-  getAddress(id: number){
-    return this.http.get<Person>(endpoint +`person/${id}/address`).pipe(
+
+  deleteAddress(personId:any,address:Address){
+    return this.http.delete<Person>(`${endpoint}person/${personId}/address/${address.id}`).pipe(
       catchError(this.handleError)
     );
   }
 
-  deleteAddress(id :number){
-    return this.http.delete(`${endpoint}person/${id}/address`).pipe(
+  deletePerson(personId:any){
+    return this.http.delete(`${endpoint}person/${personId}`).pipe(
       catchError(this.handleError)
     );
   }
@@ -44,8 +45,10 @@ export class RequestService {
     );
   }
 
-  updateAddress(address:Address){
-    return this.http.post<Address>(`${endpoint}address`,address).pipe(
+
+
+  addAddress(personId:any,address:Address){
+    return this.http.put<Person>(`${endpoint}person/${personId}/address`,address).pipe(
       catchError(this.handleError)
     );
   }

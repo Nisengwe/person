@@ -6,8 +6,11 @@
     <mat-card-content>
         
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions *ngIf="!!person.firstName">
         <button (click)="editPerson()" mat-raised-button color="primary" >Edit</button>
-        <button mat-raised-button color="accent" >Delete</button>
+        <button (click)="deletePerson()"  mat-raised-button color="accent" >Delete</button>
+    </mat-card-actions>
+    <mat-card-actions *ngIf="!person.firstName">
+        <button (click)="addPerson()" mat-raised-button color="primary" >Add New</button>
     </mat-card-actions>
 </mat-card>
